@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="./images/calculator.png" type="image/x-icon">
+</head>
+<body id="body">
+    <div class="calc-container" id="calc-container">
+        <div id="display_section" class=" col-12">
+            <span id="history"></span>
+            <button id="darkMode" class="btn  btn-dark" onclick="switchMode()"><i class="fa-solid fa-moon" id="dark"></i></button>
+            <button id="mute" class="btn  btn-dark" onclick="audioMode()"><i id="muteIcon" class="fa-regular fa-bell"></i></button>
+            <input type="text" id="result"  placeholder="0">
+            <div id="percentage_container" class="d-none">
+                <input type="text" readonly onfocus="addSelected('pV')" id="percentage_value"  placeholder="0%">
+                <span id="percentageICON" class="d-none">%</span>
+                <input type="text" readonly onfocus="addSelected('pOF')" id="percentageof_value"  placeholder="0">
+            </div>
+        </div>
+        
+        <div class="row row-gap-4 my-3  px-3 px-sm-4 py-sm-2">
+            
+            <div id="more" class="col-12 row">
+            </div>
+            
+            <button class="btn btns col-3" id="clear" onclick="cleared()">AC</button>
+            <button class="btn operators btns col-3 activePercent" id="percentage"  onclick=" percentage() ">%</button>
+            <button onclick="displayNum('/')" class="btn btns operators col-3"><i class="fa-solid fa-divide"></i></button>
+            <button onclick="backspace()" class="btn btns operators col-3" id="back"><i class="fa-solid fa-delete-left"></i></button>
+            
+            <button onclick="displayNum(7)" class="btn btns nums col-3">7</button>
+            <button onclick="displayNum(8)" class="btn btns nums col-3">8</button>
+            <button onclick="displayNum(9)" class="btn btns nums col-3">9</button>
+            <button onclick="displayNum('*')" class="btn btns operators col-3"><i class="fa-solid fa-xmark"></i></button>
+            
+            <button onclick="displayNum(4)" class="btn btns nums col-3">4</button>
+            <button onclick="displayNum(5)" class="btn btns nums col-3">5</button>
+            <button onclick="displayNum(6)" class="btn btns nums col-3">6</button>
+            <button onclick="displayNum('+')" class="btn btns operators col-3"><i class="fa-solid fa-plus"></i></button>
+            
+            <button onclick="displayNum(1)" class="btn btns nums col-3">1</button>
+            <button onclick="displayNum(2)" class="btn btns nums col-3">2</button>
+            <button onclick="displayNum(3)" class="btn btns nums col-3">3</button>
+            <button onclick="displayNum('-')" class="btn btns operators col-3"><i class="fa-solid fa-minus"></i></button>
+            
+            
+            <button onclick="displayNum('.')" class="btn btns nums col-3">.</button>
+            <button onclick="displayNum(0)" class="btn btns nums col-3">0</button>
+            <button class="btn btns col-3" id="more-btn" onclick="more()">more</button>
+            <!-- <button onclick="displayNum('000')" class="btn btns nums col-3">000</button> -->
+            <button onclick="evaluateNum()" class="btn btns col-3" id="equals"><i class="fa-solid fa-equals"></i></button>
+            
+            
+        </div>
+    </div>
+    <!-- <h4 class="heading d-inline-block d-sm-none"></h4> -->
+</body>
+</html>
